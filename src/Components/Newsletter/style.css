@@ -1,0 +1,35 @@
+.newslatter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1050px;
+    min-width: 300px;
+    height: 700px;
+    gap: 20px;
+    font-size: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .2), 0 2px 4px -1px rgba(0, 0, 0, .06); ;
+    padding-left: 11%;
+}
+.newslatter h2{
+    margin-left: 30%;
+    font-weight: 400;
+}
+.newslatter input{
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid gray;
+    background-color: rgb(248, 249, 247);
+    font-size: 21px;
+    max-width: 850px;
+}
+.newslatter button{
+    height: 50px;
+    border-radius: 7px;
+    border: 1px solid gray;
+    background-color:#10b981;
+    font-size: 23px;
+    color: white;
+    border: 0;
+    max-width: 850px;
+}

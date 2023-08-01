@@ -1,0 +1,29 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #10b981;;
+    gap: 35%;
+    margin-bottom: 100px;
+}
+.nav h1{
+    font-size: 60px;
+}
+.navlinks{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    font-size: 30px;
+}
+.navlinks a{
+    color: black;
+    text-decoration: none;
+}
+.navlinks a:active{
+    color: #10b981;;
+    text-decoration: none;
+}
+
+
