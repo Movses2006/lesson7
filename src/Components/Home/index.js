@@ -2,34 +2,32 @@ import { useState, useEffect } from "react";
 import "./style.css"
 import Layout from "../Layouts";
 import { API } from "../utiles/constants";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    
     const [cocktails, setCocktails] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${API}${searchTerm}`
+      );
+       const data = await response.json();
+       setCocktails(data.drinks);
+      }   catch (error) {
+      console.error("Error fetching data:", error);
+      }
+    };
+    
+    const handleChange = (event) => {
+     setSearchTerm(event.target.value);
+    };
 
     useEffect(() => {
       fetchData();
-    }, []);
+    }, [searchTerm]);
 
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `${API}${searchTerm}`
-        );
-        const data = await response.json();
-        setCocktails(data.drinks || []);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    const handleChange = (event) => {
-      setSearchTerm(event.target.value);
-      fetchData();
-    };
     const inputSearch = () => {
-        console.log("Coctail")
+      console.log("Coctail")
     }
     return (
     <Layout>
@@ -51,7 +49,9 @@ const Home = () => {
                 <h4>{strDrink}</h4>
                 <h5>{strCategory}</h5>
               </div>
-              <button className="btn">Details</button>
+              <Link to={"/coctails/" + idDrink}>
+                <button className="btn">Details</button>
+              </Link>
             </div>
           ))}
         </div>

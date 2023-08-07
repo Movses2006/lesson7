@@ -1,0 +1,16 @@
+.btn{
+    background: #10b981;;
+    border: 0;
+    padding: 5px;
+    width:140px ;
+    font-size: 26px;
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+.details{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 40px;
+    flex-direction: column;
+}
